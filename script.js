@@ -4,24 +4,25 @@ class Carro {
         this.cor = cor;
         this.ligado = false;
         this.velocidade = 0;
-        this.somMotor = document.getElementById("somMotor")
-        this.somAcelerar = document.getElementById("somAcelerar")
 
-        console.log("somLigar:", this.somMotor); // Adicione este log
-        console.log("somAcelerar:", this.somAcelerar); // Adicione este log
+        // Obter os elementos de áudio
+        this.somLigar = document.getElementById("somMotor");
+        this.somAcelerar = document.getElementById("somAcelerar");
+        this.carroImagem = document.getElementById("carro-imagem"); // Obtém a imagem do carro
     }
 
     ligar() {
         this.ligado = true;
         console.log("Carro ligado!");
         this.atualizarEstado();
-        this.tocarSom(this.somMotor)
+        this.tocarSom(this.somLigar); // Toca o som de ligar
     }
 
     desligar() {
         this.ligado = false;
         console.log("Carro desligado!");
         this.atualizarEstado();
+        this.tocarSom(this.somDesligar); // Toca o som de desligar
     }
 
     acelerar() {
@@ -29,7 +30,15 @@ class Carro {
             this.velocidade += 10;
             console.log("Carro acelerando! Velocidade:", this.velocidade);
             this.atualizarVelocidade();
-            this.tocarSom(this.somAcelerar)
+            this.tocarSom(this.somAcelerar); // Toca o som de acelerar
+
+            // Adiciona a classe "acelerando" para iniciar a animação
+            this.carroImagem.classList.add("acelerando");
+
+            // Remove a classe "acelerando" após um pequeno atraso (duração da transição)
+            setTimeout(() => {
+                this.carroImagem.classList.remove("acelerando");
+            }, 500); // 500 milissegundos = 0.5 segundos (igual à duração da transição)
         } else {
             console.log("O carro precisa estar ligado para acelerar!");
         }
@@ -46,14 +55,14 @@ class Carro {
         document.getElementById("velocidade").textContent = this.velocidade;
     }
 
-    tocarSom(audioElement){
+    tocarSom(audioElement) {
         audioElement.currentTime = 0; // Reinicia o som para que ele toque desde o início
         audioElement.play();
     }
 }
 
 // Criar o objeto carro
-const meuCarro = new Carro("Bugatti", "Azul");
+const meuCarro = new Carro("Fusca", "Azul");
 
 // Exibir informações iniciais
 document.getElementById("modelo").textContent = meuCarro.modelo;

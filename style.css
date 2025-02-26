@@ -47,3 +47,7 @@ body {
 .desligado {
     filter: grayscale(100%); /* Aplica filtro de escala de cinza quando desligado */
 }
+
+.acelerando {
+    margin-left: 100px !important; /* Move o carro para a direita */
+}
