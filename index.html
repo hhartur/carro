@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Carro Virtual</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Meu Carro Virtual</h1>
+
+        <img id="carro-imagem" src="bugatti.png" alt="Imagem do Carro">
+
+        <p id="carro-info">
+            <strong>Modelo:</strong> <span id="modelo"></span><br>
+            <strong>Cor:</strong> <span id="cor"></span><br>
+            <strong>Estado:</strong> <span id="estado"></span><br>
+            <strong>Velocidade:</strong> <span id="velocidade">0</span> km/h
+
+            <audio id="somMotor" preload="auto">
+                <source src="1.mp3" type="audio/mpeg">
+            </audio>
+            <audio id="somAcelerar" preload="auto">
+                <source src="2.mp3" type="audio/mpeg">
+            </audio>
+        </p>
+
+        <div class="botoes">
+            <button id="ligar-desligar">Ligar</button>
+            <button id="acelerar">Acelerar</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

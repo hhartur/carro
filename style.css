@@ -1,0 +1,49 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#carro-imagem {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+#carro-info {
+    margin-bottom: 20px;
+}
+
+.botoes button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    margin: 5px;
+}
+
+.botoes button:hover {
+    background-color: #3e8e41;
+}
+
+.ligado {
+    filter: none; /* Remove o filtro de cor quando ligado */
+}
+
+.desligado {
+    filter: grayscale(100%); /* Aplica filtro de escala de cinza quando desligado */
+}
